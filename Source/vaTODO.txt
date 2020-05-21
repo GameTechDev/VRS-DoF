@@ -1,0 +1,78 @@
+TODOs:
+
+//////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+
+
+ [x] Rip out DX11? or at least fix it
+
+ [x] improve specular dampening for VRS - make it image comp metric driven
+
+ [x] project / file / app title naming 
+
+ [x] do the rudimentary perf/quality testing and document in readme.md
+
+ [ ] readme.md
+
+ [ ] ask for review
+
+ [ ] start scanning
+
+ [ ] UI 
+   [x] add info on the first line on "use F1 to show/hide UI" 
+   [x] perhaps add "play animation" as first option
+   [x] simplify UI?
+   [ ] update to latest imgui?
+
+
+
+
+
+
+
+//////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+
+DONE section (gets cleared up every now and then)
+
+  [x] new selection - select opaque, transparents in separate lists
+ 
+ [x] opaque sort by VRS rate - UI choice for sorting, use case to show/verify that partial pipeline flushes in Gen12 are gone
+   [x] do sorting
+   [x] grab GPA capture, try to validate correctness 
+     [x] ordering for depth prepass
+     [x] ordering for decals and transparencies
+     [x] ordering for opaque when VRS enabled
+   [x] optional 'sort by VRS'
+   [x] validate perf - old numbers on a sticker
+     [x] try to see if back to front makes any difference for depth prepass??
+
+ [x] try new gradientfilter
+
+ [x] merge to vanilla   
+
+ [x] add horiz/vert and VRS offset to material settings
+
+ [x] automatic way of finding horizontal vs vertical
+   [x] basic implementation
+
+ [x] automatic perf vs quality tradeoff
+   [x] find start with 2x2
+
+ [-] scripted way of profiling material quality loss vs perf gain - 2x2 only for now (or 4x2/2x4)
+
+ [x] AO shadows mip bleed
+
+ [ ] fixup DoF
+   [x] capture GPA
+   [x] why do we need scenecontext? remove if possible and remove executesingleitem stuff
+   [x] remove duplicated shader functions
+   [x] remove dynamic branching from m_CSFarBlur/nearblur (requires more shaders) -> was a bit faster
+   [x] do all near first and then all far, for cache coherency -> was a bit faster
+   [-] switch to 16x16 dispatch -> actually slower!
+   [-] see the far blur - instead of doing more taps, how about just rotate and do twice?
+   [-] also how about a poisson filter or something?
+   [-] output might be buggy too
+   [x] screen size dependent blur
+   [x] blurtype can be shader constant
+   [x] try CMAA after DoF
+
+ [x] PIX markers
