@@ -87,8 +87,10 @@ A more advanced solution to this problem could be to use depth/normal informatio
 
 # Gradient filter
  
-If we imagine the ability to run pixel shader at the lower rate (VRS) but still output the individual pixels at the higher rate (not supported by VRS), we could think of scenarios where it is beneficial to split the computation into coarse (for ex., diffuse lighting) and full resolution (for ex., specular lighting, alpha testing) parts, all within the capabilities of the classic pixel shading pipeline.
+If we imagine the ability to run pixel shader at the lower rate (VRS) but still output the individual pixels at the higher rate (not currently supported by VRS), we could think of scenarios where it is beneficial to split the computation into coarse (for ex., diffuse lighting) and full resolution (for ex., specular lighting, alpha testing) parts, all within the capabilities of the classic pixel shading pipeline.
+
 To explore this idea, we created a filter that can be added at the end of a pixel shader in order to mitigate one of the main issues when using VRS - blockiness artifacts. This filter works by taking the final (per-VRS block) color output and, based on the information available within the 2x2 shading quad (obtained simply with ddx/ddy partial derivative instructions), it part-interpolates and part-extrapolates color values over the output full resolution pixels.
+
 The output of this Gradient Filter is visually better than the native output of VRS in almost all cases (including the 0.5-1.0 higher overall PSNR metrics) at the expense of a couple of math instructions at the end of the shader and the added cost of outputting per-pixel values instead of broadcasting one color value across the whole block (variable based on hardware/driver implementation).
 
 ![Alt text](Images/vrs_gradient_filter_1.jpg?raw=true "Gradient Filter 1")
