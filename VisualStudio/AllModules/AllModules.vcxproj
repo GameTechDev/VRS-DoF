@@ -309,9 +309,6 @@
     <None Include="..\..\Source\Rendering\Shaders\filament\tone_mapping.fs" />
   </ItemGroup>
   <ItemGroup>
-    <Text Include="..\..\Source\vaTODO.txt" />
-  </ItemGroup>
-  <ItemGroup>
     <ClInclude Include="..\..\Source\Rendering\Shaders\vaCanvas.hlsl">
       <FileType>Document</FileType>
     </ClInclude>

@@ -967,9 +967,6 @@
     </None>
   </ItemGroup>
   <ItemGroup>
-    <Text Include="..\..\Source\vaTODO.txt" />
-  </ItemGroup>
-  <ItemGroup>
     <FxCompile Include="..\..\Source\Rendering\Shaders\vaDepthOfField.hlsl">
       <Filter>Rendering\Shaders</Filter>
     </FxCompile>
