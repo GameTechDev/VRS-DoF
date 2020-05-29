@@ -108,7 +108,7 @@ Tested with Visual Studio 2019, DirectX 12 GPU with VRS support and Windows vers
 
 # Credits
 
-Sample created by Filip Strugar, feel free to send any feedback directly at filip.strugar@intel.com.
+Sample created by Filip Strugar, feel free to send any feedback directly at filip.strugar@intel.com. Many thanks to Trapper McFerron for implementing the DoF effect.
 
 Many thanks to Amazon and Nvidia for providing the Amazon Lumberyard Bistro dataset through the Open Research Content Archive (ORCA): https://developer.nvidia.com/orca/amazon-lumberyard-bistro
 
