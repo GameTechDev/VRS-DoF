@@ -1,3 +1,7 @@
+# DISCONTINUATION OF PROJECT #
+This project will no longer be maintained by Intel.
+Intel has ceased development and contributions including, but not limited to, maintenance, bug fixes, new releases, or updates, to this project.
+Intel no longer accepts patches to this project.
 # Variable Rate Shading and Depth of Field
  
 The main motivation for this sample is to explore quality vs performance trade-offs that are the major part of using Variable Rate Shading, as well as demonstrate using VRS in combination with an effect such as Depth of Field in a forward renderer. It is mainly focused on Tier 1 (per-draw call) VRS but a lot of the learnings should be useful for Tier 2 or mixed implementations.
